@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+C:\Users\swelter\GitProjects\NewRepo\.metadata\.plugins\org.eclipse.jdt.core
+584279237.index
