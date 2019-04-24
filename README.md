@@ -1,5 +1,5 @@
 # SimpleWebApp README
-Lets create a simple web application with use of the following...
+Okay, lets create a simple web application with use of the following...
 
 ## Tools
 Bootstrap(Themes), HTML, CSS, Javascript, LightBox
@@ -53,15 +53,15 @@ Feature - Implementation of CRUD operations by MySql DB
 ```
 Feature - Pivot CRUD operations from MySql to Sequelize ORM
   Spike User Story - Research Sequelize implementation process
-  User Story - Translate SELECT query into Sequerlize ORM implementation
-  User Story - Translate INSERT query into Sequerlize ORM implementation
-  User Story - Translate UPDATE query into Sequerlize ORM implementation
-  User Story - Translate DELETE query into Sequerlize ORM implementation
+  User Story - Translate SELECT query into Sequelize ORM implementation
+  User Story - Translate INSERT query into Sequelize ORM implementation
+  User Story - Translate UPDATE query into Sequelize ORM implementation
+  User Story - Translate DELETE query into Sequelize ORM implementation
 ```
 Moving along lets begin...
 
 ### Planning our Sprints
-To secure short term delivery by taking into consideration Sprint capacity and load. Sprints on average last one to two weeks. For this app, we we'll be winging it (2-3 day Sprints?).
+To secure short term delivery by taking into consideration Sprint capacity and load. Sprints on average last one to two weeks. For this app, we'll be winging it (2-3 day Sprints?).
 ```
 Sprint 1
 ```
