@@ -63,23 +63,19 @@ Moving along lets begin...
 ### Planning our Sprints
 To secure short term delivery by taking into consideration Sprint capacity and load. Sprints on average last one to two weeks. For this app, we'll be winging it (2-3 day Sprints?).
 
-Sprint 1 [Scrumy Board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrumy board")
+Sprint 1 [scrum board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrum board")
 
 
-Sprint 2
-[SimpleWebApp Scrumy Sprint 2 Board](https://scrumy.com/SimpleWebApp_Sprint2 "Sprint 2 scrumy board")
+Sprint 2 [scrum board](https://scrumy.com/SimpleWebApp_Sprint2 "Sprint 2 scrum board")
 
 
-Sprint 3
-[SimpleWebApp Scrumy Sprint 3 Board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrumy board")
+Sprint 3 [scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
 
 
-Sprint 4
-[SimpleWebApp Scrumy Sprint 4 Board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrumy board")
+Sprint 4 [scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
 
 
-Sprint 5
-[SimpleWebApp Scrumy Sprint 5 Board](https://scrumy.com/SimpleWebApp_Sprint5 "Sprint 5 scrumy board")
+Sprint 5 [scrum board](https://scrumy.com/SimpleWebApp_Sprint5 "Sprint 5 scrum board")
 
 ...more on the way.
 
