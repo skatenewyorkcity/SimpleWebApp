@@ -94,7 +94,6 @@ Sprint 3
 * 020 - Spike User Story - MySql ERD model design, perform normalization if necessary - 2
 * 021 - Spike User Story - Research Heroku setup/deployments - 2
 * 022 - Enabler User Story - Setup Heroku - 4
-* 019 - Feature - Implementation of CRUD operations by MySql DB
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
 
 Sprint 4 
@@ -102,6 +101,7 @@ Sprint 4
 * 025 - User Story - Implement INSERT query - 2
 * 026 - User Story - Implement PUT query - 2
 * 027 - User Story - Implement DELETE query - 2
+* 019 - Feature - Implementation of CRUD operations by MySql DB
 * 023 - Enabler User Story - Setup/deploy MySql DB - 4
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
 
