@@ -114,7 +114,7 @@ Sprint 5
 * 028 - Feature - Convert CRUD operations from MySql to Sequelize ORM
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint5 "Sprint 5 scrum board")
 
-Cool, once we establish our sprints, lets use...
+Cool, once we established our sprints, lets use...
 
 ### Gitflow
 As version control workflow...Check this [article](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow "gitFlow article at git-tower") and lets create our branches; one branch per user story, each of them associated to their parent feature (ex - "feature/ID_userStoryName"). Note - When working in large groups focus on pushing as frequent as possible, it will mean smaller deltas (smaller code change differences from commit to commit), therefore merge conflicts will be easier to manage.
