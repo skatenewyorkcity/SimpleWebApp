@@ -48,7 +48,6 @@ Epic: Create person app
   025 User Story - Implement INSERT query
   026 User Story - Implement PUT query
   027 User Story - Implement DELETE query
-
 ```
 ```
 028 Feature - Pivot CRUD operations from MySql to Sequelize ORM
