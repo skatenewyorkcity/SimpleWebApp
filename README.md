@@ -74,8 +74,8 @@ Sprint 1
 * 005 - Enabler User Story - Setup git repository - 1
 * 008 - Spike User Story - Design the page objects styling and navigation - 1
 * 009 - Enabler User Story - Install Bootcamp - 1
-[scrum board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrum board")
-Capacity: 10 / Load: 6
+* [scrum board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrum board")
+* Capacity: 10 / Load: 6
 
 Sprint 2 
 * 006 - User Story - Implement simple "Hello World" page - 1
@@ -87,8 +87,8 @@ Sprint 2
 * 016 - User Story - Implement Confirmation/alerts with Lightbox - 1
 * 001 - Feature - Setup/configure or stack/infrastructure
 * 007 - Feature - Implementation of web application front-end
-[scrum board](https://scrumy.com/SimpleWebApp_Sprint2 "Sprint 2 scrum board")
-Capacity: 10 / Load: 7
+* [scrum board](https://scrumy.com/SimpleWebApp_Sprint2 "Sprint 2 scrum board")
+* Capacity: 10 / Load: 7
 
 Sprint 3
 * 017 - User Story - Implement PUT - 1
@@ -98,8 +98,8 @@ Sprint 3
 * 021 - Spike User Story - Research Heroku setup/deployments - 1
 * 022 - Enabler User Story - Setup Heroku - 2
 * 019 - Feature - Implementation of CRUD operations by MySql DB
-[scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
-Capacity: 10 / Load: 6
+* [scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
+* Capacity: 10 / Load: 6
 
 Sprint 4 
 * 024 - User Story - Implement SELECT query - 1
@@ -107,8 +107,8 @@ Sprint 4
 * 026 - User Story - Implement PUT query - 1
 * 027 - User Story - Implement DELETE query - 1
 * 023 - Enabler User Story - Setup/deploy MySql DB - 2
-[scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
-Capacity: 10 / Load: 6
+* [scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
+* Capacity: 10 / Load: 6
 
 Sprint 5
 * 029 - Spike User Story - Research Sequelize implementation process - 2
@@ -117,8 +117,8 @@ Sprint 5
 * 032 - User Story - Translate UPDATE query into Sequelize ORM implementation - 1
 * 033 - User Story - Translate DELETE query into Sequelize ORM implementation - 1
 * 028 - Feature - Convert CRUD operations from MySql to Sequelize ORM
-[scrum board](https://scrumy.com/SimpleWebApp_Sprint5 "Sprint 5 scrum board")
-Capacity: 10 / Load: 6
+* [scrum board](https://scrumy.com/SimpleWebApp_Sprint5 "Sprint 5 scrum board")
+* Capacity: 10 / Load: 6
 
 ...more on the way.
 
