@@ -51,12 +51,12 @@ Epic: Create person app
 
 ```
 ```
-028 Feature - Pivot CRUD operations from MySql to Sequelize ORM
-  029 Spike User Story - Research Sequelize implementation process
-  030 User Story - Translate SELECT query into Sequelize ORM implementation
-  031 User Story - Translate INSERT query into Sequelize ORM implementation
-  032 User Story - Translate UPDATE query into Sequelize ORM implementation
-  033 User Story - Translate DELETE query into Sequelize ORM implementation
+*028 Feature - Pivot CRUD operations from MySql to Sequelize ORM
+  *029 Spike User Story - Research Sequelize implementation process
+  *030 User Story - Translate SELECT query into Sequelize ORM implementation
+  *031 User Story - Translate INSERT query into Sequelize ORM implementation
+  *032 User Story - Translate UPDATE query into Sequelize ORM implementation
+  *033 User Story - Translate DELETE query into Sequelize ORM implementation
 ```
 Moving along lets begin...
 
@@ -68,55 +68,55 @@ Legend: id - itemType - name - points
 ```
 
 Sprint 1 
-002 - Spike User Story - Design/deploy our local stack - 1
-003 - Enabler User Story - Install NPM, install nodemon - 1 
-004 - Enabler User Story - Install morgan, install express - 1
-005 - Enabler User Story - Setup git repository - 1
-008 - Spike User Story - Design the page objects styling and navigation - 1
-009 - Enabler User Story - Install Bootcamp - 1
+* 002 - Spike User Story - Design/deploy our local stack - 1
+* 003 - Enabler User Story - Install NPM, install nodemon - 1 
+* 004 - Enabler User Story - Install morgan, install express - 1
+* 005 - Enabler User Story - Setup git repository - 1
+* 008 - Spike User Story - Design the page objects styling and navigation - 1
+* 009 - Enabler User Story - Install Bootcamp - 1
 [scrum board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrum board")
 Capacity: 10 / Load: 6
 
 Sprint 2 
-006 - User Story - Implement simple "Hello World" page - 1
-010 - User Story - Create and style crud pages - 1
-011 - User Story - Implement/configure header menu buttons navigation logic/routing - 1
-013 - Spike User Story - Research CRUD implementation approach in Express, NodeJs and JSON - 1
-014 - User Story - Implement GET - 1
-015 - User Story - Implement POST - 1
-016 - User Story - Implement Confirmation/alerts with Lightbox - 1
-001 - Feature - Setup/configure or stack/infrastructure
-007 - Feature - Implementation of web application front-end
+* 006 - User Story - Implement simple "Hello World" page - 1
+* 010 - User Story - Create and style crud pages - 1
+* 011 - User Story - Implement/configure header menu buttons navigation logic/routing - 1
+* 013 - Spike User Story - Research CRUD implementation approach in Express, NodeJs and JSON - 1
+* 014 - User Story - Implement GET - 1
+* 015 - User Story - Implement POST - 1
+* 016 - User Story - Implement Confirmation/alerts with Lightbox - 1
+* 001 - Feature - Setup/configure or stack/infrastructure
+* 007 - Feature - Implementation of web application front-end
 [scrum board](https://scrumy.com/SimpleWebApp_Sprint2 "Sprint 2 scrum board")
 Capacity: 10 / Load: 7
 
 Sprint 3
-017 - User Story - Implement PUT - 1
-018 - User Story - Implement DELETE - 1
-012 - Feature - Implementation of CRUD operations
-020 - Spike User Story - MySql ERD model design, perform normalization if necessary - 1
-021 - Spike User Story - Research Heroku setup/deployments - 1
-022 - Enabler User Story - Setup Heroku - 2
-019 - Feature - Implementation of CRUD operations by MySql DB
+* 017 - User Story - Implement PUT - 1
+* 018 - User Story - Implement DELETE - 1
+* 012 - Feature - Implementation of CRUD operations
+* 020 - Spike User Story - MySql ERD model design, perform normalization if necessary - 1
+* 021 - Spike User Story - Research Heroku setup/deployments - 1
+* 022 - Enabler User Story - Setup Heroku - 2
+* 019 - Feature - Implementation of CRUD operations by MySql DB
 [scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
 Capacity: 10 / Load: 6
 
 Sprint 4 
-024 - User Story - Implement SELECT query - 1
-025 - User Story - Implement INSERT query - 1
-026 - User Story - Implement PUT query - 1
-027 - User Story - Implement DELETE query - 1
-023 - Enabler User Story - Setup/deploy MySql DB - 2
+* 024 - User Story - Implement SELECT query - 1
+* 025 - User Story - Implement INSERT query - 1
+* 026 - User Story - Implement PUT query - 1
+* 027 - User Story - Implement DELETE query - 1
+* 023 - Enabler User Story - Setup/deploy MySql DB - 2
 [scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
 Capacity: 10 / Load: 6
 
 Sprint 5
-029 - Spike User Story - Research Sequelize implementation process - 2
-030 - User Story - Translate SELECT query into Sequelize ORM implementation - 1
-031 - User Story - Translate INSERT query into Sequelize ORM implementation - 1
-032 - User Story - Translate UPDATE query into Sequelize ORM implementation - 1
-033 - User Story - Translate DELETE query into Sequelize ORM implementation - 1
-028 - Feature - Convert CRUD operations from MySql to Sequelize ORM
+* 029 - Spike User Story - Research Sequelize implementation process - 2
+* 030 - User Story - Translate SELECT query into Sequelize ORM implementation - 1
+* 031 - User Story - Translate INSERT query into Sequelize ORM implementation - 1
+* 032 - User Story - Translate UPDATE query into Sequelize ORM implementation - 1
+* 033 - User Story - Translate DELETE query into Sequelize ORM implementation - 1
+* 028 - Feature - Convert CRUD operations from MySql to Sequelize ORM
 [scrum board](https://scrumy.com/SimpleWebApp_Sprint5 "Sprint 5 scrum board")
 Capacity: 10 / Load: 6
 
