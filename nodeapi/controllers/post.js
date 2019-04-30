@@ -8,7 +8,7 @@ module.exports = {
 	getPosts
 };*/
 
-exports.getPosts = (req, res) => {
+/*exports.getPosts = (req, res) => {
 	res.json({
 		posts: [
 			{title: "first post"},
@@ -16,3 +16,4 @@ exports.getPosts = (req, res) => {
 		]
 	});
 }
+*/
