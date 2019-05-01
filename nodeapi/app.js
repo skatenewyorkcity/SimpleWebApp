@@ -18,9 +18,14 @@ app.use(myOwnMiddleware);
 
 app.use("/", postRoutes);
 
-console.log("something");
+//
+
+var people = require('./db/people.json');
+console.log(people.person);
+
+//
 
 const port = 8080;
 app.listen(port, () => {
 	console.log(`A Node Js API is listening on port: ${port}`);
-});
+}); 
