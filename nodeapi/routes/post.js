@@ -26,5 +26,4 @@ router.get("/read", function(req, res){
 	res.sendFile(path.join(__dirname, "../read.html"));
 });
 
-
 module.exports = router;
