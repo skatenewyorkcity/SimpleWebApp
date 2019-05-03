@@ -44,18 +44,52 @@
               </tr>
             </thead>
             <tbody>
+              <script>
+              var foo = function(firstNameDom, lastNameDom, emailDom){
+                console.log(firstNameDom, lastNameDom, emailDom);
+                
+                var txt;
+
+                $.getJSON("/people", function(people){
+                  //console.log(people);
+
+                  people.person.push({        //add the employee
+                    firstName: firstNameDom,
+                    lastName: lastNameDom,
+                    email: emailDom,
+                  });
+
+                  console.log(JSON.stringify(people));  //reserialize to JSON*/
+                  txt = JSON.stringify(people);
+                  //console.log(txt);
+                  //fs.writeFile('people.json', json, 'utf8', callback);
+
+                  $.post("/addPerson", function(data, status){
+                    /*alert("Data");*/
+                    /*console.log("actionpacked");*/
+
+                  });
+
+                });   
+
+              }
+
+              </script>
+
+              <form method="POST" id="myForm">
               <tr>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" id="usr">
+                  <input type="text" class="form-control" name="firstNameName" value=""></div>
                 </div></td>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" id="usr">
+                  <input type="text" class="form-control" name="lastNameName" value="">
                 </div></td>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" id="usr">
+                  <input type="text" class="form-control" name="emailName" value="">
                 </div></td>
-                <td><button type="button" class="btn btn-primary">Create</button></td>
+                <td><button type="button" class="btn btn-primary" value="" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" action="/addPerson">Submit</button></td>
               </tr>
+            </form>
             </tbody>
         </table>
       </p>

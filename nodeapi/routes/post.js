@@ -2,9 +2,13 @@ const express = require('express');
 const postController = require('../controllers/post');
 const path = require('path');
 
+const fs = require('fs');
+
 const router = express.Router();
 
 /*router.get("/", postController.getPosts);*/
+
+//GET
 
 router.get("/", function(req, res){
 	res.sendFile(path.join(__dirname, "../index.html"));
@@ -24,6 +28,16 @@ router.get("/delete", function(req, res){
 
 router.get("/read", function(req, res){
 	res.sendFile(path.join(__dirname, "../read.html"));
+});
+
+router.get("/people", function(req, res){
+	res.sendFile(path.join(__dirname, "../people.json"));
+});
+
+//POST
+
+router.post("/addPerson", function(req, res){
+	
 });
 
 module.exports = router;

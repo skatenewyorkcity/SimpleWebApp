@@ -45,25 +45,37 @@
                 <th>Email</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-                <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-                <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-                <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
+            <tbody id='id00'>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>                 
+                </tr>
+                <script>
+
+                $(function() {
+                    var table = document.getElementById("id00"); //give this ID to your table
+                    $.getJSON("/people", function(people){
+
+                        for(var u = 0; u < people.person.length; u++){
+                        var row = table.insertRow(u);
+                        var cell = row.insertCell(0);
+                        cell.innerHTML = people.person[u].firstName;
+                        console.log(people.person[u].firstName);
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = people.person[u].lastName;
+                        console.log(people.person[u].lastName);
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = people.person[u].email;
+                        console.log(people.person[u].email);
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<button type='button' class='btn btn-danger'>"+"Update"+"</button>";
+                        }
+
+                    });   
+                });
+              </script>
             </tbody>
           </table>
         </div>

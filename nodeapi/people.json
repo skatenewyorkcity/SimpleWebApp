@@ -1,0 +1,9 @@
+{
+	"person":
+	[
+		{"firstName": "John", "lastName": "Doe", "email": "john@example.com"},
+		{"firstName": "Mary", "lastName": "Moe", "email": "mary@example.com"},
+		{"firstName": "July", "lastName": "Dooley", "email": "july@example.com"},
+		{"firstName": "July", "lastName": "Dooley", "email": "july@example.com"}
+	]
+}

@@ -5,23 +5,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script>
-      var people;
-                   
-        people = {
-            "person":
-            [
-                { "personId": "1", "firstName": "John", "lastName": "Doe", "email": "john@example.com"},
-                { "personId": "2", "firstName": "Mary", "lastName": "Moe", "email": "mary@example.com"},
-                { "personId": "3", "firstName": "Mary", "lastName": "Moe", "email": "mary@example.com"},
-                { "personId": "4", "firstName": "Rich", "lastName": "Smith", "email": "rich@example.com"},
-                { "personId": "5", "firstName": "Rich", "lastName": "Smith", "email": "rich@example.com"}
-            ]
-        };
 
-  </script>
 </head>
 <body>
+    <div id=userData></div>
   <div style="margin:20px;">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -51,7 +38,7 @@
       <h1>Read Data</h1>
       <p>
         <div>
-          <p>This section includes a table with existing dataset, no buttons.</p>            
+          <p>This section includes a table with existing dataset, no buttons:</p>            
           <table class="table table-hover">
             <thead>
               <tr>
@@ -61,19 +48,33 @@
               </tr>
             </thead>
             <tbody id='id00'>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td"></td>
+                </tr>
                 <script>
-                var table = document.getElementById("id00"); //give this ID to your table
 
-                    for(var u = 0; u < people.person.length; u++){
+                $(function() {
+                    var table = document.getElementById("id00"); //give this ID to your table
+                    $.getJSON("/people", function(people){
+
+                        for(var u = 0; u < people.person.length; u++){
                         var row = table.insertRow(u);
                         var cell = row.insertCell(0);
                         cell.innerHTML = people.person[u].firstName;
+                        console.log(people.person[u].firstName);
                         var cell = row.insertCell(-1);
                         cell.innerHTML = people.person[u].lastName;
+                        console.log(people.person[u].lastName);
                         var cell = row.insertCell(-1);
                         cell.innerHTML = people.person[u].email;
-                    }
-                    
+                        console.log(people.person[u].email);
+                        }
+                        
+                    });   
+                });
+
                 </script>
             </tbody>
           </table>
