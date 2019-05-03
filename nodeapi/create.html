@@ -64,9 +64,12 @@
                   //console.log(txt);
                   //fs.writeFile('people.json', json, 'utf8', callback);
 
-                  $.post("/addPerson", function(data, status){
-                    /*alert("Data");*/
-                    /*console.log("actionpacked");*/
+                  $.post("/addPerson", function(req, res){
+                    //alert("Data");
+                   // console.log("actionpacked");
+                  //console.log(request.body);      // your JSON
+
+                  //console.log(req.body.firstNameDom);
 
                   });
 
@@ -76,18 +79,19 @@
 
               </script>
 
-              <form method="POST" id="myForm">
+              <form method="POST" id="myForm" action="/addPerson">
               <tr>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" name="firstNameName" value=""></div>
+                  <input type="text" class="form-control" name="firstNameName"></div>
                 </div></td>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" name="lastNameName" value="">
+                  <input type="text" class="form-control" name="lastNameName">
                 </div></td>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" name="emailName" value="">
+                  <input type="text" class="form-control" name="emailName">
                 </div></td>
-                <td><button type="button" class="btn btn-primary" value="" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" action="/addPerson">Submit</button></td>
+                <!--<td><button class="btn btn-primary" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" type="submit">Submit</button></td>-->
+                <td><button class="btn btn-primary" type="submit">Submit</button></td>
               </tr>
             </form>
             </tbody>

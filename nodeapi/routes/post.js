@@ -2,7 +2,6 @@ const express = require('express');
 const postController = require('../controllers/post');
 const path = require('path');
 
-
 const fs = require('fs');
 
 const router = express.Router();
@@ -37,12 +36,26 @@ router.get("/people", function(req, res){
 
 //POST
 
-/*router.post("/addPerson", function(req, res){
 
-  var jsonString = req.body.json;
-  console.log('json string : %s', jsonString);
+/** 10) Get input from client - Query parameters */
+//
+// /name?first=<firstname>&last=<lastname>
+/*router.route('/create').get((req, res) => {
+  res.status(200).json({"name": req.query.first + ' ' + req.query.last})
+   
+}).post((req, res) => {
+  res.status(200).json({"name": req.query.first + ' ' + req.query.last})
+})*/
 
-});*/
+
+router.post("/addPerson", function(req, res){
+
+  console.log("Message!!!");
+  res.end(JSON.stringify(req.body));
+  console.log(req.body);
+
+});
+
 
 /*router.post('/addPerson', function(request, response){
   console.log(request.body);      // your JSON
