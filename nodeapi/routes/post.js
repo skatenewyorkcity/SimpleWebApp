@@ -2,6 +2,7 @@ const express = require('express');
 const postController = require('../controllers/post');
 const path = require('path');
 
+
 const fs = require('fs');
 
 const router = express.Router();
@@ -36,8 +37,17 @@ router.get("/people", function(req, res){
 
 //POST
 
-router.post("/addPerson", function(req, res){
-	
-});
+/*router.post("/addPerson", function(req, res){
+
+  var jsonString = req.body.json;
+  console.log('json string : %s', jsonString);
+
+});*/
+
+/*router.post('/addPerson', function(request, response){
+  console.log(request.body);      // your JSON
+  response.send(request.body);    // echo the result back
+});*/
+
 
 module.exports = router;

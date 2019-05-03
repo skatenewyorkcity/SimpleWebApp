@@ -5,6 +5,9 @@ const morgan = require("morgan");
 //bring in routes
 const postRoutes = require("./routes/post");
 
+const bodyParser = require('body-parser');
+var people = require('./db/people.json');
+
 //middleware 
 const myOwnMiddleware = (req, res, next) =>{
 	console.log('middelware applied!!!');
@@ -13,6 +16,7 @@ const myOwnMiddleware = (req, res, next) =>{
 
 app.use(morgan("dev"));
 app.use(myOwnMiddleware);
+app.use(bodyParser.json());
 
 /*app.get("/", getPosts);*/
 
@@ -20,7 +24,6 @@ app.use("/", postRoutes);
 
 //
 
-var people = require('./db/people.json');
 console.log(people.person);
 
 //
