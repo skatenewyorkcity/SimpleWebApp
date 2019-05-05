@@ -44,18 +44,48 @@
               </tr>
             </thead>
             <tbody>
+              <script>
+               
+              var foo = function(firstNameDom, lastNameDom, emailDom){
+                console.log(firstNameDom, lastNameDom, emailDom);
+                
+                var txt;
+
+                $.getJSON("/people", function(people){
+                  //console.log(people);
+
+                  people.person.push({        //add the employee
+                    firstName: firstNameDom,
+                    lastName: lastNameDom,
+                    email: emailDom,
+                  });
+
+                  console.log(JSON.stringify(people));  //reserialize to JSON*/
+                  txt = JSON.stringify(people);
+                  ///console.log(txt);
+                  //fs.writeFile('people.json', json, 'utf8', callback);
+
+                });   
+
+              }
+
+              </script>
+
+              <form method="POST" id="myForm" action="/addPerson">
               <tr>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" id="usr">
+                  <input type="text" class="form-control" name="firstNameName"></div>
                 </div></td>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" id="usr">
+                  <input type="text" class="form-control" name="lastNameName">
                 </div></td>
                 <td><div class="form-group">
-                  <input type="text" class="form-control" id="usr">
+                  <input type="text" class="form-control" name="emailName">
                 </div></td>
-                <td><button type="button" class="btn btn-primary">Create</button></td>
+                <td><button class="btn btn-primary" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" type="submit">Submit</button></td>
+                <!--<td><button class="btn btn-primary" type="submit">Submit</button></td>-->
               </tr>
+            </form>
             </tbody>
         </table>
       </p>

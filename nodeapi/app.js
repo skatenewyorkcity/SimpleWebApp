@@ -2,8 +2,12 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+const bodyParser = require('body-parser');
+
 //bring in routes
 const postRoutes = require("./routes/post");
+
+var people = require('./db/people.json');
 
 //middleware 
 const myOwnMiddleware = (req, res, next) =>{
@@ -11,19 +15,17 @@ const myOwnMiddleware = (req, res, next) =>{
 	next();
 };
 
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
 app.use(morgan("dev"));
 app.use(myOwnMiddleware);
-
-/*app.get("/", getPosts);*/
-
 app.use("/", postRoutes);
 
-//
 
-var people = require('./db/people.json');
 console.log(people.person);
 
-//
 
 const port = 8080;
 app.listen(port, () => {

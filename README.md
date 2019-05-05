@@ -116,7 +116,7 @@ Sprint 5 (05/08/19 - 05/10/19)
 Cool, once we established our sprints, lets use...
 
 ### Gitflow
-As our version control workflow...Check this [article](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow "gitFlow article at git-tower") and lets create our branches; one branch per user story, each of them associated to their parent feature (ex - "feature/ID_userStoryName"). Note - When working in large groups focus on pushing as frequent as possible, it will mean smaller deltas (smaller code change differences from commit to commit), therefore merge conflicts become easier to manage. Note: Develop branches out of Master, features branch out of and back into Develop. Feature branches should be deleted on the remote repo once a pull is requested and merged back into Develop, this project is different lets leave them on.
+As our version control workflow...Check this [article](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow "gitFlow article at git-tower") and lets create our branches; one branch per user story, each of them associated to their parent feature (ex - "feature/ID_userStoryName"). Note - When working in large groups focus on pushing as frequent as possible, it will mean smaller deltas (smaller code change differences from commit to commit), therefore merge conflicts become easier to manage. Note: We will build/release to environments from Master. Develop branches out of Master, features branch out of and back into Develop. Feature branches should be deleted from the remote repo once a pull is requested and merged back into Develop, this project is different lets leave them on.
 
 ### Authors
 Pedro Garboza
