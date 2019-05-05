@@ -54,10 +54,6 @@
                 </tr>
                 <script>
 
-                $('#myModal').on('shown.bs.modal', function () {
-                  $('#myInput').trigger('focus')
-                })
-
                 $(function() {
                     var table = document.getElementById("id00"); //give this ID to your table
                     $.getJSON("/people", function(people){
