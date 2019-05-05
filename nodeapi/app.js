@@ -15,31 +15,17 @@ const myOwnMiddleware = (req, res, next) =>{
 	next();
 };
 
-//app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
 app.use(morgan("dev"));
 app.use(myOwnMiddleware);
-
-/*app.get("/", getPosts);*/
-
 app.use("/", postRoutes);
 
-app.post("/addPerson", function(req, res){
-
-  console.log("Message!!!");
-  //res.end(JSON.stringify(req.body));
-  console.log(req.body);
-
-});
-
-//
 
 console.log(people.person);
 
-//
 
 const port = 8080;
 app.listen(port, () => {

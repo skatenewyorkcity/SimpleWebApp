@@ -45,6 +45,7 @@
             </thead>
             <tbody>
               <script>
+               
               var foo = function(firstNameDom, lastNameDom, emailDom){
                 console.log(firstNameDom, lastNameDom, emailDom);
                 
@@ -61,17 +62,8 @@
 
                   console.log(JSON.stringify(people));  //reserialize to JSON*/
                   txt = JSON.stringify(people);
-                  //console.log(txt);
+                  ///console.log(txt);
                   //fs.writeFile('people.json', json, 'utf8', callback);
-
-                  $.post("/addPerson", function(req, res){
-                    //alert("Data");
-                   // console.log("actionpacked");
-                  //console.log(request.body);      // your JSON
-
-                  //console.log(req.body.firstNameDom);
-
-                  });
 
                 });   
 
@@ -90,8 +82,8 @@
                 <td><div class="form-group">
                   <input type="text" class="form-control" name="emailName">
                 </div></td>
-                <!--<td><button class="btn btn-primary" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" type="submit">Submit</button></td>-->
-                <td><button class="btn btn-primary" type="submit">Submit</button></td>
+                <td><button class="btn btn-primary" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" type="submit">Submit</button></td>
+                <!--<td><button class="btn btn-primary" type="submit">Submit</button></td>-->
               </tr>
             </form>
             </tbody>
