@@ -46,34 +46,69 @@
               </tr>
             </thead>
             <tbody id='id00'>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>                 
-                </tr>
+                
                 <script>
-
-                $(function() {
+                $(function() {                 
                     var table = document.getElementById("id00"); //give this ID to your table
-                    $.getJSON("/people", function(people){
+                    
+                    $.getJSON("/people", function(people){                       
+                      var updateIndexesArray = [];
+                      var updateArrayIndexValue;
 
-                        for(var u = 0; u < people.person.length; u++){
+                      for(var u = 0; u < people.person.length; u++){
                         var row = table.insertRow(u);
+
+                        //Include people.person.id
+
                         var cell = row.insertCell(0);
                         cell.innerHTML = people.person[u].firstName;
                         console.log(people.person[u].firstName);
+
                         var cell = row.insertCell(-1);
                         cell.innerHTML = people.person[u].lastName;
                         console.log(people.person[u].lastName);
+
                         var cell = row.insertCell(-1);
                         cell.innerHTML = people.person[u].email;
                         console.log(people.person[u].email);
-                        var cell = row.insertCell(-1);
-                        cell.innerHTML = "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#exampleModal'>"+"Update"+"</button>";
-                        }
 
-                    });   
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<input type='hidden' id='"+u+"'>";
+
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#exampleModal' id='buttonId"+u+"'>"+"Update"+"</button>";
+
+                        //Implement a DOM data structure which includes: id, firstName, lastName, email, buttonId. Attributes taken from GET/JSON object and .insertCell/.innerHTML 
+
+                        //Implement a onClick method in button attributes within button table cell which gets either button id or table cell id from the DOM; Correlates it to the data structure created so all attributes can then be passed into the modal for respective id/row/object
+
+                        //Persist the modal data to 'person.json' to overwrite existing data entry by ID
+
+                        updateIndexesArray.push(u);
+                        updateArrayIndexValue = u;
+                      }
+
+                      console.log("UpdateId Indexes Array: "+updateIndexesArray);
+
+                      //var updateButtonId = document.getElementById("id");
+
+                      for(i = 0; i < updateIndexesArray.length; i++){
+                        //if(updateIndexesArray[i] === updateButtonId){
+                          //console.log("Selected index to update: "+updateButtonId);
+                          console.log(people.person[i]);
+                        //}
+                      }
+                      
+                      console.log("Person object count: "+people.person.length);
+                      var personObjectArray = people.person.length-1;
+                      console.log("Person object array index: "+personObjectArray);
+                      var newPersonIdValue = people.person.length+1;
+                      console.log("Add a Person and obj count will be: "+newPersonIdValue);
+                      //document.getElementById('newPersonIdValue').value = people.person.length;
+                      //document.getElementById('personToUpdateIdValue').value = people.person.length;
+
+                    });  
+
                 });
 
               </script>
@@ -88,13 +123,48 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
+                    <!--<form method="POST" id="" action="/updatePerson">
                     <div class="modal-body">
-                      ...
+                      <input type="hidden" class="form-control" name="newPersonId" id="newPersonIdValue">                        
+                      <div class="form-group">
+                        Firstname:
+                        <input type="text" class="form-control" name="firstNameName">
+                      </div>                             
+                      <div class="form-group">
+                        Lastname: 
+                        <input type="text" class="form-control" name="lastNameName">
+                      </div>
+                      <div class="form-group">
+                        Email:  
+                        <input type="text" class="form-control" name="emailName">  
+                      </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-info">Update</button>
+                      <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-info" type="submit">Update</button>
                     </div>
+                    </form>-->
+                    <form method="POST" id="" action="/updatePerson">
+                    <div class="modal-body">
+                      <!--<input type="hidden" class="form-control" name="personToUpdateId" id="personToUpdateIdValue">-->      
+                      <div class="form-group">
+                        Firstname:
+                        <input type="text" class="form-control" name="firstNameName" placeholder="">
+                      </div>                             
+                      <div class="form-group">
+                        Lastname: 
+                        <input type="text" class="form-control" name="lastNameName" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        Email:  
+                        <input type="text" class="form-control" name="emailName" placeholder="">  
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-info" type="submit">Update</button>
+                    </div>
+                    </form>      
                   </div>
                 </div>
               </div>
