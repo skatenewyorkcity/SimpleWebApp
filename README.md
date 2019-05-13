@@ -60,12 +60,12 @@ Epic: Create person app
 Moving along lets begin...
 
 ### Planning our Sprints
-To secure short term delivery by estimating Sprint capacity/load/userstory points. Sprints on average last one to two weeks. For this app, we'll be winging it (2-3 day Sprints?). User story points increment in a fibonacci sequence. For this app lets assume each user story point represents an approximate of an hours work.
+To secure short term delivery by estimating Sprint capacity/load/userstory points. Sprints on average last one to two weeks. For this app, we'll be winging it (week-long Sprints?). User story points increment in a fibonacci sequence. For this app lets assume each user story point represents an approximate of an hours work.
 
 ```
 Legend: id - itemType - itemName - userStoryPoints
 ```
-Sprint 1 (04/26/19 - 04/28/19)
+Sprint 1 (04/29 - 05/05)
 * 002 - Spike User Story - Design/deploy our local stack - 2
 * 003 - Enabler User Story - Install NPM, install nodemon - 2 
 * 004 - Enabler User Story - Install morgan, install express - 2
@@ -74,7 +74,7 @@ Sprint 1 (04/26/19 - 04/28/19)
 * 009 - Enabler User Story - Install Bootcamp - 2
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrum board")
 
-Sprint 2 (04/29/19 - 05/01/19)
+Sprint 2 (05/06 - 05/12)
 * 006 - User Story - Implement simple "Hello World" page - 2
 * 010 - User Story - Create and style crud pages - 2
 * 011 - User Story - Implement/configure header menu buttons navigation logic/routing - 2
@@ -86,7 +86,7 @@ Sprint 2 (04/29/19 - 05/01/19)
 * 007 - Feature - Implementation of web application front-end
 * Capacity: 20 / Load: 14 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint2 "Sprint 2 scrum board")
 
-Sprint 3 (05/02/19 - 05/04/19)
+Sprint 3 (05/13 - 05/19)
 * 017 - User Story - Implement PUT - 2
 * 018 - User Story - Implement DELETE - 2
 * 012 - Feature - Implementation of CRUD operations
@@ -95,7 +95,7 @@ Sprint 3 (05/02/19 - 05/04/19)
 * 022 - Enabler User Story - Setup Heroku - 4
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
 
-Sprint 4 (05/05/19 - 05/07/19)
+Sprint 4 (05/20 - 05/26)
 * 024 - User Story - Implement SELECT query - 2
 * 025 - User Story - Implement INSERT query - 2
 * 026 - User Story - Implement PUT query - 2
@@ -104,7 +104,7 @@ Sprint 4 (05/05/19 - 05/07/19)
 * 023 - Enabler User Story - Setup/deploy MySql DB - 4
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
 
-Sprint 5 (05/08/19 - 05/10/19)
+Sprint 5 (05/27 - 06/02)
 * 029 - Spike User Story - Research Sequelize implementation process - 4
 * 030 - User Story - Translate SELECT query into Sequelize ORM implementation - 2
 * 031 - User Story - Translate INSERT query into Sequelize ORM implementation - 2
