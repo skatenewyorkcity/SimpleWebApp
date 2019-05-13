@@ -41,7 +41,7 @@ router.post("/addPerson", function(req, res){
 
   for(i = 0; i < jsonContent.person.length; i++){
 
-    newPersonId = i + "1";
+    newPersonId = i + 1;
   
   }
 
@@ -49,7 +49,7 @@ router.post("/addPerson", function(req, res){
   				"firstName":req.body.firstNameName, 
 				"lastName":req.body.lastNameName, 
 				"email":req.body.emailName,
-        "id":newPersonId
+        "id":JSON.stringify(newPersonId)
 				};
 
   jsonContent.person.push(newPerson);
