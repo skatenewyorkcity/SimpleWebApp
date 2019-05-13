@@ -65,7 +65,7 @@ To secure short term delivery by estimating Sprint capacity/load/userstory point
 ```
 Legend: id - itemType - itemName - userStoryPoints
 ```
-Sprint 1 (04/26/19 - 04/28/19)
+Sprint 1 
 * 002 - Spike User Story - Design/deploy our local stack - 2
 * 003 - Enabler User Story - Install NPM, install nodemon - 2 
 * 004 - Enabler User Story - Install morgan, install express - 2
