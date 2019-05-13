@@ -50,7 +50,6 @@
                 <script>
                 var updateIndexesArray = [];
                 var updateArrayIndexValue;
-                //var domPeopleArray = [[],[]];
                 var domPeopleJson = {"domPerson":[]};
                 var domPersonJson = {};
                 var table = document.getElementById("id00"); //give this ID to your table
@@ -116,8 +115,7 @@
                 
                 });
               
-console.log(domPeopleJson);
-//var modalPeopleJson = domPeopleJson;
+              console.log(domPeopleJson);
               
               function passPersonToModal(buttonId) {
 
@@ -126,7 +124,6 @@ console.log(domPeopleJson);
 
                     for(var y = 0; y < 1; y++){ 
                        
-
                         document.getElementById("personToUpdateFname").value = domPeopleJson.domPerson[x].fnFromJson;
                         document.getElementById("personToUpdateLname").value = domPeopleJson.domPerson[x].lnFromJson;
                         document.getElementById("personToUpdateEmail").value = domPeopleJson.domPerson[x].eFromJson;
@@ -134,6 +131,7 @@ console.log(domPeopleJson);
                       }  
 
                       //console.log(jsonObject);  
+
                     }
 
                   }

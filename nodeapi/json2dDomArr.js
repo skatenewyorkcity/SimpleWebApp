@@ -16,8 +16,4 @@ for(var x = 0; x < 5; x++){
     console.log(jsonObject);
   }    
   console.log("---");
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fc12bf7278f1d0ec64e18a03c790d589180034da

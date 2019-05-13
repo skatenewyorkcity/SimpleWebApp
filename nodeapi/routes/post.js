@@ -37,40 +37,30 @@ router.post("/addPerson", function(req, res){
 
   var jsonFile = fs.readFileSync("people.json")
   var jsonContent = JSON.parse(jsonFile);
+  var newPersonId;
 
-  /*
-  console.log("Message!!!");
-  res.end(JSON.stringify(req.body));
-  console.log(req.body.firstNameName);
-  console.log(req.body.lastNameName);
-  console.log(req.body.emailName);
-  console.log(JSON.stringify(req.body));
-  */
+  for(i = 0; i < jsonContent.person.length; i++){
+
+    newPersonId = i + "1";
+  
+  }
 
   var newPerson = {
   				"firstName":req.body.firstNameName, 
 				"lastName":req.body.lastNameName, 
-				"email":req.body.emailName
+				"email":req.body.emailName,
+        "id":newPersonId
 				};
 
   jsonContent.person.push(newPerson);
 
   for(i = 0; i < jsonContent.person.length; i++){
-  	console.log("firstname: ", jsonContent.person[i].firstName);
-	console.log("secondname: ", jsonContent.person[i].lastName);
-	console.log("email: ", jsonContent.person[i].email);
+    console.log("firstname: ", jsonContent.person[i].firstName);
+	 console.log("secondname: ", jsonContent.person[i].lastName);
+	 console.log("email: ", jsonContent.person[i].email);
+   console.log("id:", newPersonId);
 	
   }
-
-  /*{
-	"person":
-	[
-		{"firstName": "John", "lastName": "Doe", "email": "john@example.com"},
-		{"firstName": "Mary", "lastName": "Moe", "email": "mary@example.com"},
-		{"firstName": "July", "lastName": "Dooley", "email": "july@example.com"},
-		{"firstName": "July", "lastName": "Dooley", "email": "july@example.com"}
-	]
-  }*/
 
 	fs.writeFile("people.json", '{"person":'+JSON.stringify(jsonContent.person)+'}', (err) => {
 	 	if (err) console.log(err);
@@ -87,12 +77,6 @@ router.post("/updatePerson", function(req, res){
 
   var jsonFile = fs.readFileSync("people.json")
   var jsonContent = JSON.parse(jsonFile);
-  /*var updatePerson = {
-  	"id":req.body.newPersonId,
-  	"firstName":req.body.firstNameName, 
-	"lastName":req.body.lastNameName, 
-	"email":req.body.emailName
-  };*/
   var updatePerson = {
   	"id":req.body.personToUpdateId,
   	"firstName":req.body.firstNameName, 
@@ -108,24 +92,18 @@ router.post("/updatePerson", function(req, res){
   		console.log(updatePerson.lastName);
   		console.log(updatePerson.email);
 
-  		/*console.log("id: ", jsonContent.person[i].id);
-  		console.log("firstname: ", jsonContent.person[i].firstName);
-		console.log("secondname: ", jsonContent.person[i].lastName);
-		console.log("email: ", jsonContent.person[i].email);*/
-
-  		//jsonContent.person.slice(1, 1);
-  		//jsonContent.person[i].push(updatePerson);
 		jsonContent.person[i].firstName = updatePerson.firstName;
-	  	jsonContent.person[i].lastName = updatePerson.lastName;
-	  	jsonContent.person[i].email = updatePerson.email;
-	}
+	  jsonContent.person[i].lastName = updatePerson.lastName;
+	  jsonContent.person[i].email = updatePerson.email;
+
+	 }
   } 
 
   for(i = 0; i < jsonContent.person.length; i++){
   	console.log("id: ", jsonContent.person[i].id);
   	console.log("firstname: ", jsonContent.person[i].firstName);
-	console.log("secondname: ", jsonContent.person[i].lastName);
-	console.log("email: ", jsonContent.person[i].email);
+	 console.log("secondname: ", jsonContent.person[i].lastName);
+	 console.log("email: ", jsonContent.person[i].email);
   }
 
   fs.writeFile("people.json", '{"person":'+JSON.stringify(jsonContent.person)+'}', (err) => {
