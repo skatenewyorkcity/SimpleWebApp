@@ -7,7 +7,6 @@ const fs = require('fs');
 const router = express.Router();
 
 //GET
-
 router.get("/", function(req, res){
 	res.sendFile(path.join(__dirname, "../index.html"));
 });
@@ -72,7 +71,7 @@ router.post("/addPerson", function(req, res){
 
 });
 
-//"PUT"
+//"UPDATE" *cough* PUT
 router.post("/updatePerson", function(req, res){
 
   var jsonFile = fs.readFileSync("people.json")
@@ -112,6 +111,66 @@ router.post("/updatePerson", function(req, res){
   });
 
   res.sendFile(path.join(__dirname, "../update.html"));
+
+});
+
+//DELETE
+router.post("/deletePerson", function(req, res){
+
+  var jsonFile = fs.readFileSync("people.json")
+  var jsonContent = JSON.parse(jsonFile);
+  var jsonAfterContentDeleted = {"person":[]};
+  var jsonAfterContentDeletedFinal = {"person":[]};
+  var deletePerson = {
+    "id":req.body.personToDeleteId,
+    "firstName":req.body.firstNameName, 
+    "lastName":req.body.lastNameName, 
+    "email":req.body.emailName
+  };
+  var text = {"person":[]};
+ 
+  for(i = 0; i < jsonContent.person.length; i++){
+    if(req.body.personToDeleteId === jsonContent.person[i].id){
+      delete jsonContent.person[i].id;
+      delete jsonContent.person[i].firstName;
+      delete jsonContent.person[i].lastName;
+      delete jsonContent.person[i].email;
+   }
+  } 
+
+  for(i = 0; i < jsonContent.person.length; i++){
+    text = jsonContent.person[i];
+    if((jsonContent.person[i].id !== undefined)/* || (jsonAfterContentDeleted.person[i] !== null)*/){
+      /*console.log("id: ", jsonContent.person[i].id);
+      console.log("firstname: ", jsonContent.person[i].firstName);
+      console.log("secondname: ", jsonContent.person[i].lastName);
+      console.log("email: ", jsonContent.person[i].email); */    
+      for(u = 0; u < 1; u++){
+        var firstName = text.firstName;
+        var lastName = text.lastName ;
+        var email = text.email;
+        var id = text.id;
+
+        domPersonJson = { firstName, 
+                          lastName, 
+                          email, 
+                          id };
+
+        jsonAfterContentDeleted.person.push(domPersonJson);
+      } 
+      
+    }
+
+  }
+
+  //console.log("Language: "+JSON.stringify(jsonAfterContentDeletedFinal));  
+
+  fs.writeFile("people.json", '{"person":'+JSON.stringify(jsonAfterContentDeleted.person)+'}', (err) => {
+  if (err) console.log(err);
+  console.log("Successfully Written to File.");
+  });
+
+  res.sendFile(path.join(__dirname, "../delete.html"));
 
 });
 
