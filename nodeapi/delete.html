@@ -46,36 +46,101 @@
               </tr>
             </thead>
             <tbody id='id00'>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>                 
-                </tr>
-                <script>
+                
+              <script>
+                var deleteIndexesArray = [];
+                var deleteArrayIndexValue;
+                var domPeopleJson = {"domPerson":[]};
+                var domPersonJson = {};
+                var table = document.getElementById("id00"); //give this ID to your table
 
-                $(function() {
-                    var table = document.getElementById("id00"); //give this ID to your table
-                    $.getJSON("/people", function(people){
+                $(function() {  
 
-                        for(var u = 0; u < people.person.length; u++){
+                    $.getJSON("/people", function(people){                       
+
+                      for(var u = 0; u < people.person.length; u++){
+                        var personPassedToModal = 12;
                         var row = table.insertRow(u);
+
                         var cell = row.insertCell(0);
                         cell.innerHTML = people.person[u].firstName;
-                        console.log(people.person[u].firstName);
+
                         var cell = row.insertCell(-1);
                         cell.innerHTML = people.person[u].lastName;
-                        console.log(people.person[u].lastName);
+
                         var cell = row.insertCell(-1);
                         cell.innerHTML = people.person[u].email;
-                        console.log(people.person[u].email);
-                        var cell = row.insertCell(-1);
-                        cell.innerHTML = "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModal'>"+"Delete"+"</button>";
-                        }
 
-                    });   
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<input type='hidden' id='"+u+"'>";
+
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModal' onClick='passPersonToModal("+u+")'>"+"Delete"+"</button>";
+
+                        deleteIndexesArray.push(u);
+                        deleteArrayIndexValue = u;
+
+                      }
+
+                      console.log("DeleteId Indexes Array: "+deleteIndexesArray);
+
+
+                      for(var x = 0; x < deleteIndexesArray.length; x++){
+                        var text = people.person[x];
+                        for(var y = 0; y < 1; y++){ 
+                          var fnFromJson = text.firstName;
+                          var lnFromJson = text.lastName ;
+                          var eFromJson = text.email;
+                          var idFromJson = text.id;
+
+                          domPersonJson = { fnFromJson, 
+                                         lnFromJson, 
+                                         eFromJson, 
+                                         idFromJson };
+
+                        } 
+
+                        console.log(domPersonJson);                     
+                        domPeopleJson.domPerson[x] = domPersonJson; 
+
+                      }
+
+                      console.log("Person object count: "+people.person.length);
+                      var personObjectArray = people.person.length-1;
+                      console.log("Person object array index: "+personObjectArray);
+                      var newPersonIdValue = people.person.length+1;
+                      console.log("Delete a Person and obj count will be: "+newPersonIdValue);
+                      
+                    });  
+                
                 });
+              
+              console.log(domPeopleJson);
+              
+              function passPersonToModal(buttonId) {
+
+                for(var x = 0; x < deleteIndexesArray.length; x++){
+                  if(buttonId === x){
+
+                    for(var y = 0; y < 1; y++){ 
+                       
+                        document.getElementById("personToDeleteFname").value = domPeopleJson.domPerson[x].fnFromJson;
+                        document.getElementById("personToDeleteLname").value = domPeopleJson.domPerson[x].lnFromJson;
+                        document.getElementById("personToDeleteEmail").value = domPeopleJson.domPerson[x].eFromJson;
+                        document.getElementById("personToDeleteIdValue").value = domPeopleJson.domPerson[x].idFromJson;
+                      }  
+
+                      //console.log(jsonObject);  
+
+                    }
+
+                  }
+
+                //console.log(jsonObject);
+
+              }
               </script>
+
               <!-- Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -85,14 +150,28 @@
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
-                    </div>
+                    </div>                    
+                    <form method="POST" id="" action="/deletePerson">
                     <div class="modal-body">
-                      ...
+                      <input type="hidden" class="form-control" name="personToDeleteId" id="personToDeleteIdValue" placeholder="">     
+                      <div class="form-group">
+                        Firstname:
+                        <input type="text" class="form-control" id="personToDeleteFname" name="firstNameName" placeholder="" readonly>
+                      </div>                             
+                      <div class="form-group">
+                        Lastname: 
+                        <input type="text" class="form-control" id="personToDeleteLname" name="lastNameName" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        Email:  
+                        <input type="text" class="form-control" id="personToDeleteEmail" name="emailName" placeholder="" readonly>  
+                      </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-danger">Delete</button>
+                      <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-danger" type="submit">Delete</button>
                     </div>
+                    </form> 
                   </div>
                 </div>
               </div>
