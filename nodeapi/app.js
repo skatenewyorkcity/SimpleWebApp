@@ -1,5 +1,12 @@
 const express = require("express");
 const app = express();
+
+//---
+
+const port = process.env.PORT || 4000;
+
+//---
+
 const morgan = require("morgan");
 
 const bodyParser = require('body-parser');
@@ -27,7 +34,9 @@ app.use("/", postRoutes);
 console.log(people.person);
 
 
-const port = 8080;
+/*const port = 8080;
 app.listen(port, () => {
 	console.log(`A Node Js API is listening on port: ${port}`);
-}); 
+}); */
+
+app.listen(port);
