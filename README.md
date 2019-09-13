@@ -65,7 +65,7 @@ To secure short term delivery by estimating Sprint capacity/load/userstory point
 ```
 Legend: id - itemType - itemName - userStoryPoints
 ```
-Sprint 1 (04/29 - 05/05)
+Sprint 1 
 * 002 - Spike User Story - Design/deploy our local stack - 2
 * 003 - Enabler User Story - Install NPM, install nodemon - 2 
 * 004 - Enabler User Story - Install morgan, install express - 2
@@ -74,7 +74,7 @@ Sprint 1 (04/29 - 05/05)
 * 009 - Enabler User Story - Install Bootcamp - 2
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint1 "Sprint 1 scrum board")
 
-Sprint 2 (05/06 - 05/12)
+Sprint 2 
 * 006 - User Story - Implement simple "Hello World" page - 2
 * 010 - User Story - Create and style crud pages - 2
 * 011 - User Story - Implement/configure header menu buttons navigation logic/routing - 2
@@ -95,7 +95,7 @@ Sprint 3 (05/13 - 05/19)
 * 022 - Enabler User Story - Setup Heroku - 4
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint3 "Sprint 3 scrum board")
 
-Sprint 4 (05/20 - 05/26)
+Sprint 4 
 * 024 - User Story - Implement SELECT query - 2
 * 025 - User Story - Implement INSERT query - 2
 * 026 - User Story - Implement PUT query - 2
@@ -104,7 +104,7 @@ Sprint 4 (05/20 - 05/26)
 * 023 - Enabler User Story - Setup/deploy MySql DB - 4
 * Capacity: 20 / Load: 12 / [scrum board](https://scrumy.com/SimpleWebApp_Sprint4 "Sprint 4 scrum board")
 
-Sprint 5 (05/27 - 06/02)
+Sprint 5 
 * 029 - Spike User Story - Research Sequelize implementation process - 4
 * 030 - User Story - Translate SELECT query into Sequelize ORM implementation - 2
 * 031 - User Story - Translate INSERT query into Sequelize ORM implementation - 2
