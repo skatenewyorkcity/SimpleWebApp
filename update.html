@@ -1,0 +1,206 @@
+<html>
+<head>
+  <title>Web Application</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:20px;">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">Web Application</a>
+  </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/create">Create</a>
+      </li>
+      <li>
+        <a href="/read">Read</a>
+      </li>
+      <li class="active">
+        <a href="/update">Update</a>
+      </li>
+      <li>
+        <a href="/delete">Delete</a>
+      </li>
+      <li>
+        <a href="/">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:20px;">
+      <h1>Update Data</h1>
+      <p>
+        <div>
+          <p>This section includes a table with existing dataset along with update a button:</p>            
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id='id00'>
+                
+              <script>
+                var updateIndexesArray = [];
+                var updateArrayIndexValue;
+                var domPeopleJson = {"domPerson":[]};
+                var domPersonJson = {};
+                var table = document.getElementById("id00"); //give this ID to your table
+
+                $(function() {  
+
+                    $.getJSON("/people", function(people){                       
+
+                      for(var u = 0; u < people.person.length; u++){
+                        var personPassedToModal = 12;
+                        var row = table.insertRow(u);
+
+                        var cell = row.insertCell(0);
+                        cell.innerHTML = people.person[u].firstName;
+
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = people.person[u].lastName;
+
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = people.person[u].email;
+
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<input type='hidden' id='"+u+"'>";
+
+                        var cell = row.insertCell(-1);
+                        cell.innerHTML = "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#exampleModal' onClick='passPersonToModal("+u+")'>"+"Update"+"</button>";
+
+                        updateIndexesArray.push(u);
+                        updateArrayIndexValue = u;
+
+                      }
+
+                      console.log("UpdateId Indexes Array: "+updateIndexesArray);
+
+
+                      for(var x = 0; x < updateIndexesArray.length; x++){
+                        var text = people.person[x];
+                        for(var y = 0; y < 1; y++){ 
+                          var fnFromJson = text.firstName;
+                          var lnFromJson = text.lastName ;
+                          var eFromJson = text.email;
+                          var idFromJson = text.id;
+
+                          domPersonJson = { fnFromJson, 
+                                         lnFromJson, 
+                                         eFromJson, 
+                                         idFromJson };
+
+                        } 
+
+                        console.log(domPersonJson);                     
+                        domPeopleJson.domPerson[x] = domPersonJson; 
+
+                      }
+
+                      console.log("Person object count: "+people.person.length);
+                      var personObjectArray = people.person.length-1;
+                      console.log("Person object array index: "+personObjectArray);
+                      var newPersonIdValue = people.person.length+1;
+                      console.log("Add a Person and obj count will be: "+newPersonIdValue);
+                      
+                    });  
+                
+                });
+              
+              console.log(domPeopleJson);
+              
+              function passPersonToModal(buttonId) {
+
+                for(var x = 0; x < updateIndexesArray.length; x++){
+                  if(buttonId === x){
+
+                    for(var y = 0; y < 1; y++){ 
+                       
+                        document.getElementById("personToUpdateFname").value = domPeopleJson.domPerson[x].fnFromJson;
+                        document.getElementById("personToUpdateLname").value = domPeopleJson.domPerson[x].lnFromJson;
+                        document.getElementById("personToUpdateEmail").value = domPeopleJson.domPerson[x].eFromJson;
+                        document.getElementById("personToUpdateIdValue").value = domPeopleJson.domPerson[x].idFromJson;
+                      }  
+
+                      //console.log(jsonObject);  
+
+                    }
+
+                  }
+
+                //console.log(jsonObject);
+
+              }
+              </script>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirm Upate</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <!--<form method="POST" id="" action="/updatePerson">
+                    <div class="modal-body">
+                      <input type="hidden" class="form-control" name="newPersonId" id="newPersonIdValue">                        
+                      <div class="form-group">
+                        Firstname:
+                        <input type="text" class="form-control" name="firstNameName">
+                      </div>                             
+                      <div class="form-group">
+                        Lastname: 
+                        <input type="text" class="form-control" name="lastNameName">
+                      </div>
+                      <div class="form-group">
+                        Email:  
+                        <input type="text" class="form-control" name="emailName">  
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-info" type="submit">Update</button>
+                    </div>
+                    </form>-->
+                    <form method="POST" id="" action="/updatePerson">
+                    <div class="modal-body">
+                      <input type="hidden" class="form-control" name="personToUpdateId" id="personToUpdateIdValue" placeholder="">     
+                      <div class="form-group">
+                        Firstname:
+                        <input type="text" class="form-control" id="personToUpdateFname" name="firstNameName" placeholder="">
+                      </div>                             
+                      <div class="form-group">
+                        Lastname: 
+                        <input type="text" class="form-control" id="personToUpdateLname" name="lastNameName" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        Email:  
+                        <input type="text" class="form-control" id="personToUpdateEmail" name="emailName" placeholder="">  
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-info" type="submit">Update</button>
+                    </div>
+                    </form>      
+                  </div>
+                </div>
+              </div>
+            </tbody>
+          </table>
+        </div>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

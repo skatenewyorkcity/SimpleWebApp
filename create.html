@@ -1,0 +1,96 @@
+<html>
+<head>
+  <title>Web Application</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:20px;">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">Web Application</a>
+  </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/create">Create</a>
+      </li>
+      <li>
+        <a href="/read">Read</a>
+      </li>
+      <li>
+        <a href="/update">Update</a>
+      </li>
+      <li>
+        <a href="/delete">Delete</a>
+      </li>
+      <li>
+        <a href="/">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:20px;">
+      <h1>Create Data</h1>
+      <p>This section includes a form to persist data with submit button.
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <script>
+               
+              var foo = function(firstNameDom, lastNameDom, emailDom){
+                console.log(firstNameDom, lastNameDom, emailDom);
+                
+                var txt;
+
+                $.getJSON("/people", function(people){
+                  //console.log(people);
+
+                  people.person.push({        //add the employee
+                    firstName: firstNameDom,
+                    lastName: lastNameDom,
+                    email: emailDom
+                  });
+
+                  console.log(JSON.stringify(people));  //reserialize to JSON*/
+                  txt = JSON.stringify(people);
+                  ///console.log(txt);
+                  //fs.writeFile('people.json', json, 'utf8', callback);
+
+                });   
+
+              }
+
+              </script>
+
+              <form method="POST" id="myForm" action="/addPerson">
+              <tr>
+                <td><div class="form-group">
+                  <input type="text" class="form-control" name="firstNameName">
+                </div></td>
+                <td><div class="form-group">
+                  <input type="text" class="form-control" name="lastNameName">
+                </div></td>
+                <td><div class="form-group">
+                  <input type="text" class="form-control" name="emailName">
+                </div></td>
+                <td><button class="btn btn-primary" onclick="foo(myForm.firstNameName.value, myForm.lastNameName.value, myForm.lastNameName.value, myForm.emailName.value)" type="submit">Submit</button></td>
+                <!--<td><button class="btn btn-primary" type="submit">Submit</button></td>-->
+              </tr>
+            </form>
+            </tbody>
+        </table>
+      </p>
+      <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Submit</a></p>-->
+    </div>
+  </div>
+</body>
+</html>
