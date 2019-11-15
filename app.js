@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
-
-//---
+var mysql = require('mysql');
 
 const port = process.env.PORT || 4000;
 
@@ -14,6 +13,10 @@ const bodyParser = require('body-parser');
 //bring in routes
 const postRoutes = require("./routes/post");
 
+//bring in controllers
+const jsonHandler = require("./controllers/dataHandlerJson")
+
+//bring in JSON db
 var people = require('./db/people.json');
 
 //middleware 
@@ -29,7 +32,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use(morgan("dev"));
 app.use(myOwnMiddleware);
 app.use("/", postRoutes);
-
+app.use("/", jsonHandler);
 
 console.log(people.person);
 

@@ -1,8 +1,1 @@
-{
-	"person":
-	[
-		{"firstName": "John", "lastName": "Doe", "email": "john@example.com"},
-		{"firstName": "Mary", "lastName": "Moe", "email": "mary@example.com"},
-		{"firstName": "July", "lastName": "Dooley", "email": "july@example.com"}
-	]
-}
+{"person":[{"firstName":"John","lastName":"Doe","email":"John.Doe@example.com","id":"0"},{"firstName":"Greg","lastName":"Simmons","email":"Greg.Simmons@sometime.com","id":"2"},{"firstName":"Julia","lastName":"Peters","email":"Julia.Peters@sometime.com","id":"3"},{"firstName":"Richy","lastName":"Oneily","email":"Richy.Oneily@someplace.net","id":"3"}]}
