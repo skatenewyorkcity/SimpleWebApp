@@ -23,29 +23,29 @@ router.post("/addPerson", function(req, res){
   }
 
   var newPerson = {
-  			"firstName":req.body.firstNameName, 
-				"lastName":req.body.lastNameName, 
-				"email":req.body.emailName,
+        "firstName":req.body.firstNameName, 
+        "lastName":req.body.lastNameName, 
+        "email":req.body.emailName,
         "id":JSON.stringify(newPersonId)
-				};
+        };
 
   jsonContent.person.push(newPerson);
 
   for(i = 0; i < jsonContent.person.length; i++){
     console.log("firstname: ", jsonContent.person[i].firstName);
-	 console.log("secondname: ", jsonContent.person[i].lastName);
-	 console.log("email: ", jsonContent.person[i].email);
+   console.log("secondname: ", jsonContent.person[i].lastName);
+   console.log("email: ", jsonContent.person[i].email);
    console.log("id:", newPersonId);
-	
+  
   }
 
-	fs.writeFile("db/people.json", '{"person":'+JSON.stringify(jsonContent.person)+'}', (err) => {
-	 	if (err) console.log(err);
-	 	console.log("Successfully Written to File.");
+  fs.writeFile("db/people.json", '{"person":'+JSON.stringify(jsonContent.person)+'}', (err) => {
+    if (err) console.log(err);
+    console.log("Successfully Written to File.");
 
-	});
+  });
 
-	res.sendFile(path.join(__dirname, "../views/create.html"));
+  res.sendFile(path.join(__dirname, "../views/create.html"));
 
 });
 
@@ -55,37 +55,37 @@ router.post("/updatePerson", function(req, res){
   var jsonFile = fs.readFileSync("db/people.json")
   var jsonContent = JSON.parse(jsonFile);
   var updatePerson = {
-  	"id":req.body.personToUpdateId,
-  	"firstName":req.body.firstNameName, 
-	"lastName":req.body.lastNameName, 
-	"email":req.body.emailName
+    "id":req.body.personToUpdateId,
+    "firstName":req.body.firstNameName, 
+  "lastName":req.body.lastNameName, 
+  "email":req.body.emailName
   };
  
 
   for(i = 0; i < jsonContent.person.length; i++){
-  	if(req.body.personToUpdateId === jsonContent.person[i].id){
-  		console.log(req.body.personToUpdateId);
-  		console.log(updatePerson.firstName);
-  		console.log(updatePerson.lastName);
-  		console.log(updatePerson.email);
+    if(req.body.personToUpdateId === jsonContent.person[i].id){
+      console.log(req.body.personToUpdateId);
+      console.log(updatePerson.firstName);
+      console.log(updatePerson.lastName);
+      console.log(updatePerson.email);
 
-		jsonContent.person[i].firstName = updatePerson.firstName;
-	  jsonContent.person[i].lastName = updatePerson.lastName;
-	  jsonContent.person[i].email = updatePerson.email;
+    jsonContent.person[i].firstName = updatePerson.firstName;
+    jsonContent.person[i].lastName = updatePerson.lastName;
+    jsonContent.person[i].email = updatePerson.email;
 
-	 }
+   }
   } 
 
   for(i = 0; i < jsonContent.person.length; i++){
-  	console.log("id: ", jsonContent.person[i].id);
-  	console.log("firstname: ", jsonContent.person[i].firstName);
-	 console.log("secondname: ", jsonContent.person[i].lastName);
-	 console.log("email: ", jsonContent.person[i].email);
+    console.log("id: ", jsonContent.person[i].id);
+    console.log("firstname: ", jsonContent.person[i].firstName);
+   console.log("secondname: ", jsonContent.person[i].lastName);
+   console.log("email: ", jsonContent.person[i].email);
   }
 
   fs.writeFile("db/people.json", '{"person":'+JSON.stringify(jsonContent.person)+'}', (err) => {
-	if (err) console.log(err);
-	console.log("Successfully Written to File.");
+  if (err) console.log(err);
+  console.log("Successfully Written to File.");
   });
 
   res.sendFile(path.join(__dirname, "../views/update.html"));
